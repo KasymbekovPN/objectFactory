@@ -1,5 +1,7 @@
 package ru.kpn.type;
 
+import java.util.Objects;
+
 abstract public class AbstractDatumType implements DatumType {
     
     protected final String strType;
@@ -18,4 +20,17 @@ abstract public class AbstractDatumType implements DatumType {
     }
 
     protected abstract Boolean checkValidity();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AbstractDatumType that = (AbstractDatumType) o;
+        return Objects.equals(strType, that.strType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(strType);
+    }
 }
