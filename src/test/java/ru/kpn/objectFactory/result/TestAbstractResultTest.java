@@ -1,4 +1,4 @@
-package ru.kpn.result;
+package ru.kpn.objectFactory.result;
 
 import org.junit.jupiter.api.Test;
 

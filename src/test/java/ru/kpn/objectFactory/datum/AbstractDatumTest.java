@@ -1,7 +1,7 @@
-package ru.kpn.datum;
+package ru.kpn.objectFactory.datum;
 
 import org.junit.jupiter.api.Test;
-import ru.kpn.type.DatumType;
+import ru.kpn.objectFactory.type.DatumType;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package ru.kpn.type;
+package ru.kpn.objectFactory.type;
 
 public interface DatumType {
     Boolean isValid();

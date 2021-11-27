@@ -1,6 +1,6 @@
-package ru.kpn.datum;
+package ru.kpn.objectFactory.datum;
 
-import ru.kpn.type.DatumType;
+import ru.kpn.objectFactory.type.DatumType;
 
 abstract public class AbstractDatum<T extends DatumType> implements Datum<T> {
 

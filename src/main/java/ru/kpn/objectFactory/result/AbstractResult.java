@@ -1,4 +1,4 @@
-package ru.kpn.result;
+package ru.kpn.objectFactory.result;
 
 abstract public class AbstractResult<V, S> implements Result<V, S>{
     protected Boolean success;

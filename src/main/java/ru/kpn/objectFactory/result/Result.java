@@ -1,4 +1,4 @@
-package ru.kpn.result;
+package ru.kpn.objectFactory.result;
 
 public interface Result<V, S> {
     Boolean getSuccess();
