@@ -3,10 +3,7 @@ plugins {
 }
 
 group 'ru.kpn'
-version '1.0-SNAPSHOT'
-
-sourceCompatibility = 11
-targetCompatibility = 11
+version '1.0.0'
 
 repositories {
     mavenCentral()
