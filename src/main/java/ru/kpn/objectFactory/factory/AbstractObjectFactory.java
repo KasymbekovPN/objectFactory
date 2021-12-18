@@ -1,7 +1,7 @@
 package ru.kpn.objectFactory.factory;
 
 import ru.kpn.objectFactory.datum.Datum;
-import ru.kpn.objectFactory.result.Result;
+import ru.kpn.objectFactory.results.result.Result;
 import ru.kpn.objectFactory.type.DatumType;
 
 abstract public class AbstractObjectFactory<D extends Datum<? extends DatumType>, RT, S> implements ObjectFactory<D, RT, S> {
