@@ -1,22 +1,22 @@
 package ru.kpn.objectFactory.results.result;
 
-abstract public class AbstractResult<V, S> implements Result<V, S>{
-    protected Boolean success;
-    protected V value;
-    protected S status;
+public class SimpleResult<V, S> implements Result<V, S>{
+    private Boolean success;
+    private V value;
+    private S status;
 
-    public AbstractResult(Boolean success, V value, S status) {
+    public SimpleResult(Boolean success, V value, S status) {
         this.success = success;
         this.value = value;
         this.status = status;
     }
 
-    public AbstractResult(Boolean success, S status) {
+    public SimpleResult(Boolean success, S status) {
         this.success = success;
         this.status = status;
     }
 
-    public AbstractResult(V value) {
+    public SimpleResult(V value) {
         this.success = true;
         this.value = value;
     }
