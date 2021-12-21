@@ -18,10 +18,10 @@ abstract public class AbstractObjectFactory<D extends Datum<? extends DatumType>
     protected abstract Result<RT,S> getResult(D datum);
     protected abstract Result<RT,S> getWrongResult(D datum);
 
-    protected abstract static class AbstractBuilder<D extends Datum<? extends DatumType>, RT, S> extends AbstractResultBuilder<ObjectFactory<D, RT, S>, S> {
-        protected final Map<DatumType, TypedCreator<DatumType, D, RT, S>> creators = new HashMap<>();
+    protected abstract static class AbstractBuilder<T extends DatumType, D extends Datum<? extends DatumType>, RT, S> extends AbstractResultBuilder<ObjectFactory<D, RT, S>, S> {
+        protected final Map<T, TypedCreator<T, D, RT, S>> creators = new HashMap<>();
 
-        public AbstractBuilder<D, RT, S> creator(TypedCreator<DatumType, D, RT, S> creator){
+        public AbstractBuilder<T, D, RT, S> create(TypedCreator<T, D, RT, S> creator){
             creators.put(creator.getType(), creator);
             return this;
         }
