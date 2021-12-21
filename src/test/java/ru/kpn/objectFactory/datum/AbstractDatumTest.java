@@ -37,6 +37,11 @@ public class AbstractDatumTest {
         }
 
         @Override
+        public String asStr() {
+            return null;
+        }
+
+        @Override
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;

@@ -19,6 +19,11 @@ abstract public class AbstractDatumType implements DatumType {
         return validity;
     }
 
+    @Override
+    public String asStr() {
+        return strType;
+    }
+
     protected abstract Boolean checkValidity();
 
     @Override

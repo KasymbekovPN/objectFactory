@@ -23,6 +23,13 @@ public class AbstractDatumTypeTest {
         assertThat(datumType.isValid()).isFalse();
     }
 
+    @Test
+    void shouldCheckAsStrMethod() {
+        final String strType = TestDatumType.TYPES.SOME_TYPE.name();
+        TestDatumType type = new TestDatumType(strType);
+        assertThat(strType).isEqualTo(type.asStr());
+    }
+
     private static class TestDatumType extends AbstractDatumType{
         public TestDatumType(String strType) {
             super(strType);
