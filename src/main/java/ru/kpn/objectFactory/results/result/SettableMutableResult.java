@@ -13,6 +13,10 @@ public class SettableMutableResult<V, S> implements MutableResult<V, S> {
         return new Builder<>();
     }
 
+    public static <V, S> SettableMutableResult<V,S> defaultResult(){
+        return SettableMutableResult.<V, S>builder().build();
+    }
+
     private SettableMutableResult(Setter<V, S> successSetter, Setter<V, S> valueSetter, Setter<V, S> statusSetter) {
         this.successSetter = successSetter;
         this.valueSetter = valueSetter;

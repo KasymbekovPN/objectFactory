@@ -1,8 +1,13 @@
 package ru.kpn.objectFactory.factory;
 
+import ru.kpn.objectFactory.creator.TypedCreator;
 import ru.kpn.objectFactory.datum.Datum;
+import ru.kpn.objectFactory.results.builder.AbstractResultBuilder;
 import ru.kpn.objectFactory.results.result.Result;
 import ru.kpn.objectFactory.type.DatumType;
+
+import java.util.HashMap;
+import java.util.Map;
 
 abstract public class AbstractObjectFactory<D extends Datum<? extends DatumType>, RT, S> implements ObjectFactory<D, RT, S> {
     @Override
@@ -12,4 +17,13 @@ abstract public class AbstractObjectFactory<D extends Datum<? extends DatumType>
 
     protected abstract Result<RT,S> getResult(D datum);
     protected abstract Result<RT,S> getWrongResult(D datum);
+
+    protected abstract class AbstractBuilder extends AbstractResultBuilder<ObjectFactory<D, RT, S>, S>{
+        protected final Map<DatumType, TypedCreator<DatumType, D, RT, S>> creators = new HashMap<>();
+
+        public AbstractBuilder creator(TypedCreator<DatumType, D, RT, S> creator){
+            creators.put(creator.getType(), creator);
+            return this;
+        }
+    }
 }
